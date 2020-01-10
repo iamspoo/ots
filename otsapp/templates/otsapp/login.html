@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Login page</title>
+<meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<style type="text/css">
+body{
+background-image:url("https://cdn.pixabay.com/photo/2016/11/22/19/24/archive-1850170_960_720.jpg");
+}
+</style>
+</head>
+<body>
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+  <!-- Brand/logo -->
+  <a class="navbar-brand" href="http://127.0.0.1:8000">SH</a>
+  
+</nav>
+
+<br><br><br><br>
+
+<h1 style=color:><center><i style="color:#fff;"> Track Your Order</i></center></h1>
+<center> <form onsubmit = "return validate()" action='/otsapp/lostatus/' style="width:20%" method="post"> {% csrf_token %}
+ <div class="form-group">
+    <label style="color:#fff";>Name:</label>
+    <input type="text"  id="name1" name="name1" class="form-control"  placeholder="name">
+  </div>
+  </div>
+  <div class="form-group">
+    <label style="color:#fff";>Password:</label>
+    <input type="password" id="password" name="password"class="form-control"  placeholder="Password">
+  </div>
+  <input class="btn btn-primary" type="submit" value="Login">
+</form> </center>
+<center>
+<p> <i style="color:#fff;"> If you alredy have an account you many login</i></p>
+<a class="btn btn-primary" href="/otsapp/signup" role="button" >Sign up</a></center>
+</body>
+<script type="text/javascript">
+function validate()
+{
+	var uname=document.getElementById("name1");
+	var pword=document.getElementById("password");
+	if(uname.value.trim()=="" || pword.value.trim()=="")
+	{
+		alert("Either name or password is empty");
+		return false;
+	}
+	else
+	{
+		return true;
+	}
+}
+</script>	
+</html>
